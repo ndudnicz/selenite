@@ -1,0 +1,12 @@
+name: selenite
+version: 0.1.0
+
+crystal: 0.27.2
+
+authors:
+  - Nicolas Dudniczenko <ndudnicz@protonmail.com>
+
+description: |
+  Color convertion
+
+license: MIT
