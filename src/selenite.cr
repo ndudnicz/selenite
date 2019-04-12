@@ -1,6 +1,10 @@
 struct Selenite
 
   # https://en.wikipedia.org/wiki/HSL_and_HSV
+  # Params:
+  # h : Hue in degree [0, 360]
+  # s : Saturation [0, 1]
+  # v : Value [0, 1]
   # Returns a tuple Tuple(Float64, Float64, Float64)
   #
   # ```
@@ -26,18 +30,25 @@ struct Selenite
     # get RGB
     if 0 <= hh && hh < 1.0
       t = {c + m, x + m, 0.0 + m}
+
     elsif 1.0 < hh && hh <= 2.0
       t = {x + m, c + m, 0.0 + m}
+
     elsif 2.0 < hh && hh <= 3.0
       t = {0.0 + m, c + m, x + m}
+
     elsif 3.0 < hh && hh <= 4.0
       t = {0.0 + m, x + m, c + m}
+
     elsif 4.0 < hh && hh <= 5.0
       t = {x + m, 0.0 + m, c + m}
+
     elsif 5.0 < hh && hh <= 6.0
       t = {c + m, 0.0 + m, x + m}
+
     else
       t = {0.0 + m, 0.0 + m, 0.0 + m}
+
     end
     t.map { |x| x * 256 }
   end
