@@ -7,6 +7,6 @@ authors:
   - Nicolas Dudniczenko <ndudnicz@protonmail.com>
 
 description: |
-  Color convertion
+  Color representation convertion methods (rgb => hsv, ....)
 
-license: MIT
+license: GPL3
