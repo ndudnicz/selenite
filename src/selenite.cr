@@ -6,9 +6,9 @@ struct Selenite
 
   # https://en.wikipedia.org/wiki/HSL_and_HSV
   # Params:
-  # h : Hue in degree [0.0, 360.0]
-  # s : Saturation [0.0, 100.0]
-  # v : Value [0.0, 100.0]
+  # _h : Hue in degree [0.0, 360.0]
+  # _s : Saturation [0.0, 100.0]
+  # _v : Value [0.0, 100.0]
   # Returns a tuple Tuple(Float64, Float64, Float64)
   #
   # ```
