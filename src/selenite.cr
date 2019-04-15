@@ -1,56 +1,53 @@
 struct Selenite
 
+  macro _round(_X)
+    {{ _X }} = {{ _X }} % 1.0 > 0.5 ? {{ _X }}.ceil : {{ _X }}.floor
+  end
+
   # https://en.wikipedia.org/wiki/HSL_and_HSV
   # Params:
-  # h : Hue in degree [0, 360]
-  # s : Saturation [0, 1]
-  # v : Value [0, 1]
+  # h : Hue in degree [0.0, 360.0]
+  # s : Saturation [0.0, 100.0]
+  # v : Value [0.0, 100.0]
   # Returns a tuple Tuple(Float64, Float64, Float64)
   #
   # ```
-  # Selenite.hsv_to_rgb(42, 0.42, 0.42) # => {107.52, 93.97247999999999, 62.3616}
+  # Selenite.hsv_to_rgb(42.0, 42.0, 42.0) # => {107.0, 94.0, 62.0}
   # ```
   def self.hsv_to_rgb(
-    h : Float64,
-    s : Float64,
-    v : Float64
+    _h : Float64,
+    _s : Float64,
+    _v : Float64
   ) : Tuple(Float64, Float64, Float64)
-    # get C (chroma)
-    c = v * s
+    h = _h / 60.0
+    s = _s / 100.0
+    v = _v / 100.0
+    hh = h.floor % 6.0
 
-    # get H'
-    hh = h / 60.0
+    f = h - h.floor
+    p = 255.0 * v * (1.0 - s);
+    q = 255.0 * v * (1.0 - (s * f));
+    t = 255.0 * v * (1.0 - (s * (1.0 - f)));
+    v *= 255.0;
 
-    # get X
-    x = c * (1.0 - ((hh % 2.0) - 1.0).abs)
-
-    # get m
-    m = v - c
-
-    # get RGB
-    if 0 <= hh && hh < 1.0
-      t = {c + m, x + m, 0.0 + m}
-
-    elsif 1.0 < hh && hh <= 2.0
-      t = {x + m, c + m, 0.0 + m}
-
-    elsif 2.0 < hh && hh <= 3.0
-      t = {0.0 + m, c + m, x + m}
-
-    elsif 3.0 < hh && hh <= 4.0
-      t = {0.0 + m, x + m, c + m}
-
-    elsif 4.0 < hh && hh <= 5.0
-      t = {x + m, 0.0 + m, c + m}
-
-    elsif 5.0 < hh && hh <= 6.0
-      t = {c + m, 0.0 + m, x + m}
-
+    _round(p)
+    _round(q)
+    _round(t)
+    _round(v)
+    case hh
+    when 1.0
+      {q, v, p}
+    when 2.0
+      {p, v, t}
+    when 3.0
+      {p, q, v}
+    when 4.0
+      {t, p, v}
+    when 5.0
+      {v, p, q}
     else
-      t = {0.0 + m, 0.0 + m, 0.0 + m}
-
+      {v, t, p}
     end
-    t.map { |x| x * 256 }
   end
 
   def self.hsv_to_rgb(
