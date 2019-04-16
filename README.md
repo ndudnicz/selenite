@@ -14,6 +14,9 @@ dependencies:
 ### Example :
 ```ruby
 require "selenite"
+
+Selenite.hsv_to_rgb({207.4508558724444,82.53478345665128,86.86027994130876})
+# => {39.0 ,138.0 ,221.0}
 ```
 
 ### API :
