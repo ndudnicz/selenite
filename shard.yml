@@ -7,6 +7,10 @@ authors:
   - Nicolas Dudniczenko <ndudnicz@protonmail.com>
 
 description: |
-  Color representation convertion methods (rgb => hsv, ....)
+  Color representation convertion methods (rgb, hsv, ....)
 
 license: GPL-3.0
+
+development_dependencies:
+  csv_processor:
+    github: drum445/csv_processor
