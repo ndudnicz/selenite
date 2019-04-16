@@ -1,15 +1,10 @@
 struct Selenite
-
+  # :nodoc:
   macro _round(_X)
     {{ _X }} = {{ _X }} % 1.0 > 0.5 ? {{ _X }}.ceil : {{ _X }}.floor
   end
 
-  # https://en.wikipedia.org/wiki/HSL_and_HSV
-  # Params:
-  # _h : Hue in degree [0.0, 360.0]
-  # _s : Saturation [0.0, 100.0]
-  # _v : Value [0.0, 100.0]
-  # Returns a tuple Tuple(Float64, Float64, Float64)
+  # Returns a rgb tuple Tuple(Float64, Float64, Float64)
   #
   # ```
   # Selenite.hsv_to_rgb(42.0, 42.0, 42.0) # => {107.0, 94.0, 62.0}
@@ -50,6 +45,11 @@ struct Selenite
     end
   end
 
+  # Returns a rgb tuple Tuple(Float64, Float64, Float64)
+  #
+  # ```
+  # Selenite.hsv_to_rgb({42.0, 42.0, 42.0}) # => {107.0, 94.0, 62.0}
+  # ```
   def self.hsv_to_rgb(
     hsv : Tuple(Float64, Float64, Float64)
   ) : Tuple(Float64, Float64, Float64)
