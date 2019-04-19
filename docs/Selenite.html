@@ -76,7 +76,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/ndudnicz/selenite/blob/f60bef685f5ec139ebb8a0133242e4fdbda2b55f/src/selenite.cr#L1" target="_blank">
+      <a href="https://github.com/ndudnicz/selenite/blob/2aac95b6f84e69d5569867376c585c9962384e21/src/selenite.cr#L1" target="_blank">
         selenite.cr
       </a>
     
@@ -105,28 +105,34 @@
       <li class="entry-summary">
         <a href="#hsv_to_rgb%28_h%3AFloat64%2C_s%3AFloat64%2C_v%3AFloat64%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method" class="signature"><strong>.hsv_to_rgb</strong>(_h : Float64, _s : Float64, _v : Float64) : Tuple(Float64, Float64, Float64)</a>
         
-          <div class="summary"><p>Returns a tuple Tuple(Float64, Float64, Float64)</p></div>
+          <div class="summary"><p>Returns a rgb tuple Tuple(Float64, Float64, Float64)</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#hsv_to_rgb%28hsv%3ATuple%28Float64%2CFloat64%2CFloat64%29%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method" class="signature"><strong>.hsv_to_rgb</strong>(hsv : Tuple(Float64, Float64, Float64)) : Tuple(Float64, Float64, Float64)</a>
+        <a href="#hsv_to_rgb%28_hsv%3ATuple%28Float64%2CFloat64%2CFloat64%29%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method" class="signature"><strong>.hsv_to_rgb</strong>(_hsv : Tuple(Float64, Float64, Float64)) : Tuple(Float64, Float64, Float64)</a>
+        
+          <div class="summary"><p>Returns a rgb tuple Tuple(Float64, Float64, Float64)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#rgb_to_hsv%28_r%3AFloat64%2C_g%3AFloat64%2C_b%3AFloat64%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method" class="signature"><strong>.rgb_to_hsv</strong>(_r : Float64, _g : Float64, _b : Float64) : Tuple(Float64, Float64, Float64)</a>
+        
+          <div class="summary"><p>Returns a hsv tuple Tuple(Float64, Float64, Float64)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#rgb_to_hsv%28_rgb%3ATuple%28Float64%2CFloat64%2CFloat64%29%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method" class="signature"><strong>.rgb_to_hsv</strong>(_rgb : Tuple(Float64, Float64, Float64)) : Tuple(Float64, Float64, Float64)</a>
+        
+          <div class="summary"><p>Returns a hsv tuple Tuple(Float64, Float64, Float64)</p></div>
         
       </li>
     
   </ul>
 
 
-
-  <h2>Instance Method Summary</h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#rgb_to_hsv-instance-method" class="signature"><strong>#rgb_to_hsv</strong></a>
-        
-      </li>
-    
-  </ul>
 
 
 
@@ -180,7 +186,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/ndudnicz/selenite/blob/f60bef685f5ec139ebb8a0133242e4fdbda2b55f/src/selenite.cr#L1" target="_blank">View source</a>]
+          [<a href="https://github.com/ndudnicz/selenite/blob/2aac95b6f84e69d5569867376c585c9962384e21/src/selenite.cr#L1" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -198,55 +204,80 @@
         <a class="method-permalink" href="#hsv_to_rgb%28_h%3AFloat64%2C_s%3AFloat64%2C_v%3AFloat64%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method">#</a>
       </div>
       
-        <div class="doc"><p>Returns a tuple Tuple(Float64, Float64, Float64)</p>
+        <div class="doc"><p>Returns a rgb tuple Tuple(Float64, Float64, Float64)</p>
 
 <pre><code><span class="t">Selenite</span>.hsv_to_rgb(<span class="n">42.0</span>, <span class="n">42.0</span>, <span class="n">42.0</span>) <span class="c"># =&gt; {107.0, 94.0, 62.0}</span></code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/ndudnicz/selenite/blob/f60bef685f5ec139ebb8a0133242e4fdbda2b55f/src/selenite.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/ndudnicz/selenite/blob/2aac95b6f84e69d5569867376c585c9962384e21/src/selenite.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="hsv_to_rgb(hsv:Tuple(Float64,Float64,Float64)):Tuple(Float64,Float64,Float64)-class-method">
+    <div class="entry-detail" id="hsv_to_rgb(_hsv:Tuple(Float64,Float64,Float64)):Tuple(Float64,Float64,Float64)-class-method">
       <div class="signature">
         
-        def self.<strong>hsv_to_rgb</strong>(hsv : Tuple(Float64, Float64, Float64)) : Tuple(Float64, Float64, Float64)
+        def self.<strong>hsv_to_rgb</strong>(_hsv : Tuple(Float64, Float64, Float64)) : Tuple(Float64, Float64, Float64)
 
-        <a class="method-permalink" href="#hsv_to_rgb%28hsv%3ATuple%28Float64%2CFloat64%2CFloat64%29%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method">#</a>
+        <a class="method-permalink" href="#hsv_to_rgb%28_hsv%3ATuple%28Float64%2CFloat64%2CFloat64%29%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method">#</a>
       </div>
+      
+        <div class="doc"><p>Returns a rgb tuple Tuple(Float64, Float64, Float64)</p>
+
+<pre><code><span class="t">Selenite</span>.hsv_to_rgb({<span class="n">42.0</span>, <span class="n">42.0</span>, <span class="n">42.0</span>}) <span class="c"># =&gt; {107.0, 94.0, 62.0}</span></code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/ndudnicz/selenite/blob/f60bef685f5ec139ebb8a0133242e4fdbda2b55f/src/selenite.cr#L48" target="_blank">View source</a>]
+          [<a href="https://github.com/ndudnicz/selenite/blob/2aac95b6f84e69d5569867376c585c9962384e21/src/selenite.cr#L53" target="_blank">View source</a>]
         
       </div>
     </div>
   
-
-
-
-  <h2>Instance Method Detail</h2>
-  
-    <div class="entry-detail" id="rgb_to_hsv-instance-method">
+    <div class="entry-detail" id="rgb_to_hsv(_r:Float64,_g:Float64,_b:Float64):Tuple(Float64,Float64,Float64)-class-method">
       <div class="signature">
         
-        def <strong>rgb_to_hsv</strong>
+        def self.<strong>rgb_to_hsv</strong>(_r : Float64, _g : Float64, _b : Float64) : Tuple(Float64, Float64, Float64)
 
-        <a class="method-permalink" href="#rgb_to_hsv-instance-method">#</a>
+        <a class="method-permalink" href="#rgb_to_hsv%28_r%3AFloat64%2C_g%3AFloat64%2C_b%3AFloat64%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method">#</a>
       </div>
+      
+        <div class="doc"><p>Returns a hsv tuple Tuple(Float64, Float64, Float64)</p>
+
+<pre><code><span class="t">Selenite</span>.rgb_to_hsv(<span class="n">10.0</span>, <span class="n">22.0</span>, <span class="n">33.0</span>) <span class="c"># =&gt; {208.69565217391306, 69.6969696969697, 12.941176470588237}</span></code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/ndudnicz/selenite/blob/f60bef685f5ec139ebb8a0133242e4fdbda2b55f/src/selenite.cr#L54" target="_blank">View source</a>]
+          [<a href="https://github.com/ndudnicz/selenite/blob/2aac95b6f84e69d5569867376c585c9962384e21/src/selenite.cr#L64" target="_blank">View source</a>]
         
       </div>
     </div>
   
+    <div class="entry-detail" id="rgb_to_hsv(_rgb:Tuple(Float64,Float64,Float64)):Tuple(Float64,Float64,Float64)-class-method">
+      <div class="signature">
+        
+        def self.<strong>rgb_to_hsv</strong>(_rgb : Tuple(Float64, Float64, Float64)) : Tuple(Float64, Float64, Float64)
+
+        <a class="method-permalink" href="#rgb_to_hsv%28_rgb%3ATuple%28Float64%2CFloat64%2CFloat64%29%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns a hsv tuple Tuple(Float64, Float64, Float64)</p>
+
+<pre><code><span class="t">Selenite</span>.rgb_to_hsv({<span class="n">10.0</span>, <span class="n">22.0</span>, <span class="n">33.0</span>}) <span class="c"># =&gt; {208.69565217391306, 69.6969696969697, 12.941176470588237}</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/ndudnicz/selenite/blob/2aac95b6f84e69d5569867376c585c9962384e21/src/selenite.cr#L94" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
 
 
 

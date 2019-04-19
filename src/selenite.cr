@@ -89,7 +89,7 @@ struct Selenite
   # Returns a hsv tuple Tuple(Float64, Float64, Float64)
   #
   # ```
-  # Selenite.rgb_to_hsv({42.0, 42.0, 42.0}) # => {107.0, 94.0, 62.0}
+  # Selenite.rgb_to_hsv({10.0, 22.0, 33.0}) # => {208.69565217391306, 69.6969696969697, 12.941176470588237}
   # ```
   def self.rgb_to_hsv(
     _rgb : Tuple(Float64, Float64, Float64)

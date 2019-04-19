@@ -30,7 +30,6 @@ describe Selenite do
       (v0 < 1 && v0 > -1).should eq true
       (v1 < 1 && v1 > -1).should eq true
       (v2 < 1 && v2 > -1).should eq true
-      # ret.should eq({Float64.new(row["h"]), Float64.new(row["s"]), Float64.new(row["v"])})
     end
   end
 
