@@ -76,7 +76,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/ndudnicz/selenite/blob/2aac95b6f84e69d5569867376c585c9962384e21/src/selenite.cr#L1" target="_blank">
+      <a href="https://github.com/ndudnicz/selenite/blob/ae2f01761daa41132713a3f50c9fd36a9a3df26a/src/selenite.cr#L1" target="_blank">
         selenite.cr
       </a>
     
@@ -87,20 +87,24 @@
 
 
 
-  <h2>Constructors</h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#new-class-method" class="signature"><strong>.new</strong></a>
-        
-      </li>
-    
-  </ul>
-
 
 
   <h2>Class Method Summary</h2>
   <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#hsl_to_rgb%28_h%3AFloat64%2C_s%3AFloat64%2C_l%3AFloat64%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method" class="signature"><strong>.hsl_to_rgb</strong>(_h : Float64, _s : Float64, _l : Float64) : Tuple(Float64, Float64, Float64)</a>
+        
+          <div class="summary"><p>Returns a rgb tuple Tuple(Float64, Float64, Float64)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hsl_to_rgb%28_hsv%3ATuple%28Float64%2CFloat64%2CFloat64%29%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method" class="signature"><strong>.hsl_to_rgb</strong>(_hsv : Tuple(Float64, Float64, Float64)) : Tuple(Float64, Float64, Float64)</a>
+        
+          <div class="summary"><p>Returns a rgb tuple Tuple(Float64, Float64, Float64)</p></div>
+        
+      </li>
     
       <li class="entry-summary">
         <a href="#hsv_to_rgb%28_h%3AFloat64%2C_s%3AFloat64%2C_v%3AFloat64%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method" class="signature"><strong>.hsv_to_rgb</strong>(_h : Float64, _s : Float64, _v : Float64) : Tuple(Float64, Float64, Float64)</a>
@@ -113,6 +117,20 @@
         <a href="#hsv_to_rgb%28_hsv%3ATuple%28Float64%2CFloat64%2CFloat64%29%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method" class="signature"><strong>.hsv_to_rgb</strong>(_hsv : Tuple(Float64, Float64, Float64)) : Tuple(Float64, Float64, Float64)</a>
         
           <div class="summary"><p>Returns a rgb tuple Tuple(Float64, Float64, Float64)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#rgb_to_hsl%28_r%3AFloat64%2C_g%3AFloat64%2C_b%3AFloat64%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method" class="signature"><strong>.rgb_to_hsl</strong>(_r : Float64, _g : Float64, _b : Float64) : Tuple(Float64, Float64, Float64)</a>
+        
+          <div class="summary"><p>Returns a hsl tuple Tuple(Float64, Float64, Float64)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#rgb_to_hsl%28_rgb%3ATuple%28Float64%2CFloat64%2CFloat64%29%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method" class="signature"><strong>.rgb_to_hsl</strong>(_rgb : Tuple(Float64, Float64, Float64)) : Tuple(Float64, Float64, Float64)</a>
+        
+          <div class="summary"><p>Returns a hsl tuple Tuple(Float64, Float64, Float64)</p></div>
         
       </li>
     
@@ -173,28 +191,49 @@
 </div>
 
 
-  <h2>Constructor Detail</h2>
+
+
+  <h2>Class Method Detail</h2>
   
-    <div class="entry-detail" id="new-class-method">
+    <div class="entry-detail" id="hsl_to_rgb(_h:Float64,_s:Float64,_l:Float64):Tuple(Float64,Float64,Float64)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>
+        def self.<strong>hsl_to_rgb</strong>(_h : Float64, _s : Float64, _l : Float64) : Tuple(Float64, Float64, Float64)
 
-        <a class="method-permalink" href="#new-class-method">#</a>
+        <a class="method-permalink" href="#hsl_to_rgb%28_h%3AFloat64%2C_s%3AFloat64%2C_l%3AFloat64%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method">#</a>
       </div>
+      
+        <div class="doc"><p>Returns a rgb tuple Tuple(Float64, Float64, Float64)</p>
+
+<pre><code><span class="t">Selenite</span>.hsl_to_rgb(<span class="n">300.0</span>, <span class="n">100.0</span>, <span class="n">50.0</span>) <span class="c"># =&gt; {255.0, 0.0, 255.0}</span></code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/ndudnicz/selenite/blob/2aac95b6f84e69d5569867376c585c9962384e21/src/selenite.cr#L1" target="_blank">View source</a>]
+          [<a href="https://github.com/ndudnicz/selenite/blob/ae2f01761daa41132713a3f50c9fd36a9a3df26a/src/selenite.cr#L145" target="_blank">View source</a>]
         
       </div>
     </div>
   
+    <div class="entry-detail" id="hsl_to_rgb(_hsv:Tuple(Float64,Float64,Float64)):Tuple(Float64,Float64,Float64)-class-method">
+      <div class="signature">
+        
+        def self.<strong>hsl_to_rgb</strong>(_hsv : Tuple(Float64, Float64, Float64)) : Tuple(Float64, Float64, Float64)
 
+        <a class="method-permalink" href="#hsl_to_rgb%28_hsv%3ATuple%28Float64%2CFloat64%2CFloat64%29%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns a rgb tuple Tuple(Float64, Float64, Float64)</p>
 
-
-  <h2>Class Method Detail</h2>
+<pre><code><span class="t">Selenite</span>.hsl_to_rgb({<span class="n">300.0</span>, <span class="n">100.0</span>, <span class="n">50.0</span>}) <span class="c"># =&gt; {255.0, 0.0, 255.0}</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/ndudnicz/selenite/blob/ae2f01761daa41132713a3f50c9fd36a9a3df26a/src/selenite.cr#L180" target="_blank">View source</a>]
+        
+      </div>
+    </div>
   
     <div class="entry-detail" id="hsv_to_rgb(_h:Float64,_s:Float64,_v:Float64):Tuple(Float64,Float64,Float64)-class-method">
       <div class="signature">
@@ -211,7 +250,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/ndudnicz/selenite/blob/2aac95b6f84e69d5569867376c585c9962384e21/src/selenite.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/ndudnicz/selenite/blob/ae2f01761daa41132713a3f50c9fd36a9a3df26a/src/selenite.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -231,7 +270,47 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/ndudnicz/selenite/blob/2aac95b6f84e69d5569867376c585c9962384e21/src/selenite.cr#L53" target="_blank">View source</a>]
+          [<a href="https://github.com/ndudnicz/selenite/blob/ae2f01761daa41132713a3f50c9fd36a9a3df26a/src/selenite.cr#L49" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="rgb_to_hsl(_r:Float64,_g:Float64,_b:Float64):Tuple(Float64,Float64,Float64)-class-method">
+      <div class="signature">
+        
+        def self.<strong>rgb_to_hsl</strong>(_r : Float64, _g : Float64, _b : Float64) : Tuple(Float64, Float64, Float64)
+
+        <a class="method-permalink" href="#rgb_to_hsl%28_r%3AFloat64%2C_g%3AFloat64%2C_b%3AFloat64%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns a hsl tuple Tuple(Float64, Float64, Float64)</p>
+
+<pre><code><span class="t">Selenite</span>.rgb_to_hsl(<span class="n">128.0</span>, <span class="n">0.0</span>, <span class="n">128.0</span>) <span class="c"># =&gt; {300.0, 100.0, 25.0}</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/ndudnicz/selenite/blob/ae2f01761daa41132713a3f50c9fd36a9a3df26a/src/selenite.cr#L101" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="rgb_to_hsl(_rgb:Tuple(Float64,Float64,Float64)):Tuple(Float64,Float64,Float64)-class-method">
+      <div class="signature">
+        
+        def self.<strong>rgb_to_hsl</strong>(_rgb : Tuple(Float64, Float64, Float64)) : Tuple(Float64, Float64, Float64)
+
+        <a class="method-permalink" href="#rgb_to_hsl%28_rgb%3ATuple%28Float64%2CFloat64%2CFloat64%29%29%3ATuple%28Float64%2CFloat64%2CFloat64%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns a hsl tuple Tuple(Float64, Float64, Float64)</p>
+
+<pre><code><span class="t">Selenite</span>.rgb_to_hsl({<span class="n">128.0</span>, <span class="n">0.0</span>, <span class="n">128.0</span>}) <span class="c"># =&gt; {300.0, 100.0, 25.0}</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/ndudnicz/selenite/blob/ae2f01761daa41132713a3f50c9fd36a9a3df26a/src/selenite.cr#L134" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -251,7 +330,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/ndudnicz/selenite/blob/2aac95b6f84e69d5569867376c585c9962384e21/src/selenite.cr#L64" target="_blank">View source</a>]
+          [<a href="https://github.com/ndudnicz/selenite/blob/ae2f01761daa41132713a3f50c9fd36a9a3df26a/src/selenite.cr#L60" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -271,7 +350,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/ndudnicz/selenite/blob/2aac95b6f84e69d5569867376c585c9962384e21/src/selenite.cr#L94" target="_blank">View source</a>]
+          [<a href="https://github.com/ndudnicz/selenite/blob/ae2f01761daa41132713a3f50c9fd36a9a3df26a/src/selenite.cr#L90" target="_blank">View source</a>]
         
       </div>
     </div>
