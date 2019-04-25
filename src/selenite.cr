@@ -1,4 +1,10 @@
+# Some color convert methods
+
 struct Selenite
+  # :nodoc:
+  def initialize
+  end
+
   # Returns a rgb tuple Tuple(Float64, Float64, Float64)
   #
   # ```
