@@ -1,9 +1,4 @@
 struct Selenite
-  # :nodoc:
-  macro _round(_X)
-    {{ _X }} = {{ _X }} % 1.0 > 0.5 ? {{ _X }}.ceil : {{ _X }}.floor
-  end
-
   # Returns a rgb tuple Tuple(Float64, Float64, Float64)
   #
   # ```
@@ -25,10 +20,6 @@ struct Selenite
     t = 255.0 * v * (1.0 - (s * (1.0 - f)));
     v *= 255.0;
 
-    _round(p)
-    _round(q)
-    _round(t)
-    _round(v)
     case hh
     when 1.0
       {q, v, p}
@@ -53,7 +44,7 @@ struct Selenite
   def self.hsv_to_rgb(
     _hsv : Tuple(Float64, Float64, Float64)
   ) : Tuple(Float64, Float64, Float64)
-    return self.hsv_to_rgb( _hsv[0], _hsv[1], _hsv[2] )
+    self.hsv_to_rgb( _hsv[0], _hsv[1], _hsv[2] )
   end
 
   # Returns a hsv tuple Tuple(Float64, Float64, Float64)
@@ -83,7 +74,7 @@ struct Selenite
       h = (((rr - gg) / v) + 4.0) * 60.0
     end
     s = cmax == 0.0 ? 0.0 : v / cmax
-    return {h, s * 100.0, cmax * 100.0}
+    {h, s * 100.0, cmax * 100.0}
   end
 
   # Returns a hsv tuple Tuple(Float64, Float64, Float64)
@@ -94,7 +85,7 @@ struct Selenite
   def self.rgb_to_hsv(
     _rgb : Tuple(Float64, Float64, Float64)
   ) : Tuple(Float64, Float64, Float64)
-    return self.rgb_to_hsv( _rgb[0], _rgb[1], _rgb[2] )
+    self.rgb_to_hsv( _rgb[0], _rgb[1], _rgb[2] )
   end
 
   # Returns a hsl tuple Tuple(Float64, Float64, Float64)
@@ -116,7 +107,7 @@ struct Selenite
     v = cmax - cmin
     l = (cmax + cmin) / 2.0
     if v == 0.0
-      return {0.0, 0.0, l * 100.0}
+      {0.0, 0.0, l * 100.0}
     else
       s = v / (1.0 - (2.0 * l - 1.0).abs)
       if cmax == rr
@@ -126,7 +117,7 @@ struct Selenite
       else
         h = (((rr - gg) / v) + 4.0) * 60.0
       end
-      return {h, s * 100.0, l * 100.0}
+      {h, s * 100.0, l * 100.0}
     end
   end
 
@@ -138,7 +129,53 @@ struct Selenite
   def self.rgb_to_hsl(
     _rgb : Tuple(Float64, Float64, Float64)
   ) : Tuple(Float64, Float64, Float64)
-    return self.rgb_to_hsl( _rgb[0], _rgb[1], _rgb[2] )
+    self.rgb_to_hsl( _rgb[0], _rgb[1], _rgb[2] )
+  end
+
+  # Returns a rgb tuple Tuple(Float64, Float64, Float64)
+  #
+  # ```
+  # Selenite.hsl_to_rgb(300.0, 100.0, 50.0) # => {255.0, 0.0, 255.0}
+  # ```
+  def self.hsl_to_rgb(
+    _h : Float64,
+    _s : Float64,
+    _l : Float64
+  ) : Tuple(Float64, Float64, Float64)
+    _h /= 60.0
+    _s /= 100.0
+    _l /= 100.0
+    c = (1.0 - (2.0 * _l - 1.0).abs) * _s
+    x = c * (1.0 - ((_h % 2.0) - 1.0).abs)
+    m = _l - (c / 2.0)
+    c = (c + m) * 255.0
+    x = (x + m) * 255.0
+    hh = _h.floor % 6.0
+    case hh
+    when 1.0
+      {x, c, m * 255.0}
+    when 2.0
+      {m * 255.0, c, x}
+    when 3.0
+      {m * 255.0, x, c}
+    when 4.0
+      {x, m * 255.0, c}
+    when 5.0
+      {c, m * 255.0, x}
+    else
+      {c, x, m * 255.0}
+    end
+  end
+
+  # Returns a rgb tuple Tuple(Float64, Float64, Float64)
+  #
+  # ```
+  # Selenite.hsl_to_rgb({300.0, 100.0, 50.0}) # => {255.0, 0.0, 255.0}
+  # ```
+  def self.hsl_to_rgb(
+    _hsv : Tuple(Float64, Float64, Float64)
+  ) : Tuple(Float64, Float64, Float64)
+    self.hsl_to_rgb( _hsv[0], _hsv[1], _hsv[2] )
   end
 
 
