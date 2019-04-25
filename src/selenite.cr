@@ -66,9 +66,9 @@ struct Selenite
     _g : Float64,
     _b : Float64
   ) : Tuple(Float64, Float64, Float64)
-    rr = _r / 255
-    gg = _g / 255
-    bb = _b / 255
+    rr = _r / 255.0
+    gg = _g / 255.0
+    bb = _b / 255.0
     sorted = [rr, gg, bb].sort
     cmax = sorted[-1]
     cmin = sorted[0]
@@ -96,5 +96,50 @@ struct Selenite
   ) : Tuple(Float64, Float64, Float64)
     return self.rgb_to_hsv( _rgb[0], _rgb[1], _rgb[2] )
   end
+
+  # Returns a hsl tuple Tuple(Float64, Float64, Float64)
+  #
+  # ```
+  # Selenite.rgb_to_hsl(128.0, 0.0, 128.0) # => {300.0, 100.0, 25.0}
+  # ```
+  def self.rgb_to_hsl(
+    _r : Float64,
+    _g : Float64,
+    _b : Float64
+  ) : Tuple(Float64, Float64, Float64)
+    rr = _r / 255.0
+    gg = _g / 255.0
+    bb = _b / 255.0
+    sorted = [rr, gg, bb].sort
+    cmax = sorted[-1]
+    cmin = sorted[0]
+    v = cmax - cmin
+    l = (cmax + cmin) / 2.0
+    if v == 0.0
+      return {0.0, 0.0, l * 100.0}
+    else
+      s = v / (1.0 - (2.0 * l - 1.0).abs)
+      if cmax == rr
+        h = (((gg - bb) / v) % 6.0) * 60.0
+      elsif cmax == gg
+        h = (((bb - rr) / v) + 2.0) * 60.0
+      else
+        h = (((rr - gg) / v) + 4.0) * 60.0
+      end
+      return {h, s * 100.0, l * 100.0}
+    end
+  end
+
+  # Returns a hsl tuple Tuple(Float64, Float64, Float64)
+  #
+  # ```
+  # Selenite.rgb_to_hsl({128.0, 0.0, 128.0}) # => {300.0, 100.0, 25.0}
+  # ```
+  def self.rgb_to_hsl(
+    _rgb : Tuple(Float64, Float64, Float64)
+  ) : Tuple(Float64, Float64, Float64)
+    return self.rgb_to_hsl( _rgb[0], _rgb[1], _rgb[2] )
+  end
+
 
 end
