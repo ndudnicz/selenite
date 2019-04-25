@@ -1,4 +1,4 @@
-A color converter module
+Color representation convertion methods (rgb, hsv, hsl, ...)
 
 ### Requirement :
 * crystal >= 0.27.2
