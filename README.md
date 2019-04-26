@@ -21,3 +21,8 @@ Selenite.hsv_to_rgb({207.4508558724444,82.53478345665128,86.86027994130876})
 
 ### API :
 _[Take a look at the docs](https://github.com/ndudnicz/selenite/tree/master/docs)_
+
+### Spec
+```bash
+$> crystal spec
+```
