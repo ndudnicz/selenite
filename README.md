@@ -1,10 +1,10 @@
 Color representation convertion methods (rgb, hsv, hsl, ...)
 
 ![](https://img.shields.io/badge/version-0.0.2-blue.svg)
-![](https://img.shields.io/badge/crystal--lang-0.28.0-black.svg)
+![](https://img.shields.io/badge/crystal--lang-1.13.1-black.svg)
 
 ### Requirement :
-* crystal >= 0.27.2
+* crystal >= 1.13.1
 
 ### Installation :
 Add this to your application's `shard.yml`:
